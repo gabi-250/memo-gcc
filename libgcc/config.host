@@ -103,7 +103,7 @@ arm*-*-*)
 	;;
 avr-*-*)
 	cpu_type=avr
-	;;    
+	;;
 bfin*-*)
 	cpu_type=bfin
 	;;
@@ -341,6 +341,10 @@ case ${host} in
   ;;
 *-*-elf)
   extra_parts="crtbegin.o crtend.o"
+  ;;
+i[34567]86-*-memo*)
+  extra_parts="$extra_parts crti.o crtbegin.o crtend.o crtn.o"
+  tmake_file="$tmake_file i386/t-crtstuff t-crtstuff-pic t-libgcc-pic"
   ;;
 esac
 
