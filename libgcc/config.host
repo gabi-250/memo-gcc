@@ -342,10 +342,6 @@ case ${host} in
 *-*-elf)
   extra_parts="crtbegin.o crtend.o"
   ;;
-i[34567]86-*-memo*)
-  extra_parts="$extra_parts crti.o crtbegin.o crtend.o crtn.o"
-  tmake_file="$tmake_file i386/t-crtstuff t-crtstuff-pic t-libgcc-pic"
-  ;;
 esac
 
 # VxWorks ports rely on specially crafted crtstuff files
@@ -743,6 +739,10 @@ i[34567]86-*-gnu*)
 	tmake_file="${tmake_file} i386/t-crtpc t-crtfm i386/t-crtstuff t-dfprules"
 	tm_file="${tm_file} i386/elf-lib.h"
 	md_unwind_header=i386/gnu-unwind.h
+	;;
+i[34567]86-*-memo*)
+	extra_parts="$extra_parts crti.o crtbegin.o crtend.o crtn.o"
+	tmake_file="$tmake_file i386/t-crtstuff t-crtstuff-pic t-libgcc-pic"
 	;;
 x86_64-*-linux*)
 	extra_parts="$extra_parts crtprec32.o crtprec64.o crtprec80.o crtfastmath.o"

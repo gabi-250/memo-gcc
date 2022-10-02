@@ -3483,7 +3483,7 @@ m32c-*-elf*)
 	cxx_target_objs="m32c-pragma.o"
  	;;
 i[34567]86-*-memo*)
-	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h glibc-stdint.h i386/i386elf.h memo.h"
+	tm_file="${tm_file} i386/unix.h i386/att.h elfos.h glibc-stdint.h i386/i386elf.h memo.h"
 	;;
 *)
 	echo "*** Configuration ${target} not supported" 1>&2
